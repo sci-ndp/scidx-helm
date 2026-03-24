@@ -38,8 +38,12 @@ jobs:
       - name: Set up Helm
         uses: azure/setup-helm@v4
 
-      - name: Resolve local subchart dependencies
-        run: helm dependency update ./helm
+      - name: Resolve subchart dependencies
+        run: |
+          helm dependency update ./helm/kafka-kraft
+          helm dependency update ./helm/ckan
+          helm dependency update ./helm/ndp-jupyterhub
+          helm dependency update ./helm
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0

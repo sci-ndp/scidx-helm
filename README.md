@@ -7,10 +7,13 @@ helm dep update ./ckan-helm
 ```
 ## install:
 ```
+helm repo add scidx https://sci-ndp.github.io/scidx-helm
+helm repo update
 helm upgrade --install scidx scidx/scidx-helm \
-  -f values.yaml \
+  -f my-values.yaml \
   --namespace scidx \
-  --create-namespacc
+  --create-namespace
+
 ```
 
 
