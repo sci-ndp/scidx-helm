@@ -46,6 +46,6 @@ jobs:
         with:
           # chart-releaser looks for Chart.yaml one level deep under charts_dir,
           # so it will find scidx-helm/Chart.yaml and package the umbrella chart.
-          charts_dir: ..
+          charts_dir: .
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
