@@ -39,7 +39,7 @@ jobs:
         uses: azure/setup-helm@v4
 
       - name: Resolve local subchart dependencies
-        run: helm dependency update .
+        run: helm dependency update ./helm
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
